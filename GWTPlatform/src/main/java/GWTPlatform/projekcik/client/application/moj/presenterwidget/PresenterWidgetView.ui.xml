@@ -5,6 +5,8 @@
     	Czy to jest fajna strona?
     <g:Button  ui:field="takB" text="tak"   />
     <g:Button  ui:field="nieB" text="nie"/>
+    <br></br>
+    <g:Button  ui:field = "PopupDialogs" text = "PopupDialogs"/>
     </g:HTMLPanel>
    
 </ui:UiBinder>

@@ -8,6 +8,7 @@
              <g:TextBox ui:field="drugiBox"/>
              <g:TextBox ui:field="trzeciBox"/>
              <g:Button text = "zapisz!" ui:field="pierwszyPrzycisk"/>
+             <g:Button text = "Usun!" ui:field="usun"/>
              <g:HTMLPanel  ui:field="presenterWidget"/>
              </g:HTMLPanel>
 </ui:UiBinder>

@@ -8,6 +8,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
+import com.gwtplatform.mvp.client.PopupView;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.View;
@@ -19,6 +20,7 @@ import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 
 import GWTPlatform.projekcik.client.application.moj.drugi.glowny.GlownyPresenter;
+import GWTPlatform.projekcik.client.application.moj.drugi.popupdialogs.PopupDialogsPresenter;
 import GWTPlatform.projekcik.client.application.moj.presenterwidget.PresenterWidgetPresenter;
 import GWTPlatform.projekcik.client.place.NameTokens;
 public class MojPresenter extends Presenter<MojPresenter.MyView, MojPresenter.MyProxy>  {
@@ -32,6 +34,7 @@ public class MojPresenter extends Presenter<MojPresenter.MyView, MojPresenter.My
     	public Button getPierwszyPrzycisk();
     	public TextBox getDrugiBox();
     	public TextBox getTrzeciBox();
+    	public Button getUsun();
     }
 	
    @Inject PresenterWidgetPresenter  widgetPresenter;
@@ -55,10 +58,27 @@ public class MojPresenter extends Presenter<MojPresenter.MyView, MojPresenter.My
     
     protected void onBind() {
         super.onBind();
+        //?
+        PopupView view = null;
+        PopupDialogsPresenter dialogsPresenter = null;
+        PlaceManager placeManager = null; 
+        PresenterWidgetPresenter presenter = null;
+        MojPresenter mojPresenter = new MojPresenter(null, null, null);
+        
+        getView().getUsun().addClickHandler(new ClickHandler() {
+			
+        	
+			@Override
+			public void onClick(ClickEvent event) {
+				getView().getPierwszyBox().setText("");
+		    	getView().getDrugiBox().setText("");
+		    	getView().getTrzeciBox().setText("");
+			
+			}
+		});
     }
     
-   @Inject
-    PlaceManager placeMenager;
+   @Inject PlaceManager placeMenager;
     
     protected void onReset(){
     	super.onReset();

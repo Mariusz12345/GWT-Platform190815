@@ -25,9 +25,16 @@ class MojView extends ViewImpl implements MojPresenter.MyView {
    @UiField TextBox drugiBox;
    @UiField TextBox trzeciBox;
    @UiField HTMLPanel presenterWidget;
+   @UiField Button usun;
    
 
-    public TextBox getDrugiBox() {
+    public Button getUsun() {
+	return usun;
+}
+
+
+
+	public TextBox getDrugiBox() {
 	return drugiBox;
 }
     

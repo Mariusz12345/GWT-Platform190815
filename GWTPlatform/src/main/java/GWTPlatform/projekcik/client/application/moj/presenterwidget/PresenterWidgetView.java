@@ -15,9 +15,15 @@ class PresenterWidgetView extends ViewImpl implements PresenterWidgetPresenter.M
 
     @UiField Button takB;
     @UiField Button nieB;
+    @UiField Button PopupDialogs;
     
 
-    @Inject
+    public Button getPopupDialogs() {
+		return PopupDialogs;
+	}
+
+
+	@Inject
     PresenterWidgetView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }

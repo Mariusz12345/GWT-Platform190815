@@ -11,10 +11,18 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.Proxy;
+
+import GWTPlatform.projekcik.client.application.moj.drugi.popupdialogs.PopupDialogsPresenter;
 public class PresenterWidgetPresenter extends PresenterWidget<PresenterWidgetPresenter.MyView>  {
+	
+	
+	
+	@Inject PopupDialogsPresenter popupDialogsPresenter;
+	
     interface MyView extends View  {
     	public Button getTakB();
     	public Button getNieB();
+    	public Button getPopupDialogs();
     }
 
     @Inject
@@ -38,7 +46,15 @@ public class PresenterWidgetPresenter extends PresenterWidget<PresenterWidgetPre
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				Window.alert("Moglo byc gorzej");
+			 Window.alert("Moglby byc lepszy");
+			}
+		});
+        getView().getPopupDialogs().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				addToPopupSlot(popupDialogsPresenter);
+				
 			}
 		});
     }
