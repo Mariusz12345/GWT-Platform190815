@@ -5,7 +5,7 @@
 	<g:HTMLPanel>
 
 		<h1>Strona glowna Nested presenterow treningu</h1>
-
+		<g:Label  ui:field="labelek" text="Witajc Evencie " />
 
 		<g:HTMLPanel ui:field="zawartosci" />
 	</g:HTMLPanel>

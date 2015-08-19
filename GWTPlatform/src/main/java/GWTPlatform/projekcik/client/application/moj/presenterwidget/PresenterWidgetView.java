@@ -15,11 +15,17 @@ class PresenterWidgetView extends ViewImpl implements PresenterWidgetPresenter.M
 
     @UiField Button takB;
     @UiField Button nieB;
-    @UiField Button PopupDialogs;
+    @UiField Button popupDialogs;
+    @UiField Button eventy;
     
 
-    public Button getPopupDialogs() {
-		return PopupDialogs;
+    public Button getEventy() {
+		return eventy;
+	}
+
+
+	public Button getPopupDialogs() {
+		return popupDialogs;
 	}
 
 
@@ -37,6 +43,4 @@ class PresenterWidgetView extends ViewImpl implements PresenterWidgetPresenter.M
 	public Button getNieB() {
 		return nieB;
 	}
-    
-    
 }

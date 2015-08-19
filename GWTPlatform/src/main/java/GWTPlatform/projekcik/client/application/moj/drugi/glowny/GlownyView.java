@@ -6,6 +6,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.IsWidget;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
@@ -15,8 +16,15 @@ class GlownyView extends ViewWithUiHandlers<GlownyUiHandlers> implements GlownyP
     }
     
     @UiField HTMLPanel zawartosci;
+    @UiField Label labelek;
+    
+    
 
-    @Inject
+    public Label getLabelek() {
+		return labelek;
+	}
+
+	@Inject
     GlownyView(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
     }

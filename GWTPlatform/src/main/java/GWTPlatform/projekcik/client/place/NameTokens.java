@@ -1,6 +1,10 @@
 package GWTPlatform.projekcik.client.place;
 
 public class NameTokens {
+	public static final String rpc = "rpc";
+
+	public static final String error = "error";
+
 	public static final String trzeci = "trzeci";
 
 	public static final String drugi = "drugi";
@@ -29,6 +33,14 @@ public class NameTokens {
 
 	public static String getTrzeci() {
 		return trzeci;
+	}
+
+	public static String getError() {
+		return error;
+	}
+
+	public static String getRpc() {
+		return rpc;
 	}
 
 }

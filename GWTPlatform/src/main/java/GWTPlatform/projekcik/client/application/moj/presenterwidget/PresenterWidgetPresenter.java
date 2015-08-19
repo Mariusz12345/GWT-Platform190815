@@ -12,6 +12,7 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.Proxy;
 
+import GWTPlatform.projekcik.client.application.moj.drugi.glowny.EventyEvent;
 import GWTPlatform.projekcik.client.application.moj.drugi.popupdialogs.PopupDialogsPresenter;
 public class PresenterWidgetPresenter extends PresenterWidget<PresenterWidgetPresenter.MyView>  {
 	
@@ -23,14 +24,17 @@ public class PresenterWidgetPresenter extends PresenterWidget<PresenterWidgetPre
     	public Button getTakB();
     	public Button getNieB();
     	public Button getPopupDialogs();
+    	public Button getEventy();
     }
+    
+    private final EventBus eventBus;
 
     @Inject
     PresenterWidgetPresenter(
             EventBus eventBus,
             MyView view) {
         super(eventBus, view);
-        
+        this.eventBus= eventBus;
     }
     
     protected void onBind() {
@@ -54,7 +58,15 @@ public class PresenterWidgetPresenter extends PresenterWidget<PresenterWidgetPre
 			@Override
 			public void onClick(ClickEvent event) {
 				addToPopupSlot(popupDialogsPresenter);
+			}
+		});
+        getView().getEventy().addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
 				
+				EventyEvent eventyEvent  = new EventyEvent();
+				PresenterWidgetPresenter.this.eventBus.fireEvent(eventyEvent);
 			}
 		});
     }

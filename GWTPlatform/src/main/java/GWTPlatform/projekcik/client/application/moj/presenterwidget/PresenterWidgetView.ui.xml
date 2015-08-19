@@ -6,7 +6,8 @@
     <g:Button  ui:field="takB" text="tak"   />
     <g:Button  ui:field="nieB" text="nie"/>
     <br></br>
-    <g:Button  ui:field = "PopupDialogs" text = "PopupDialogs"/>
+    <g:Button  ui:field = "popupDialogs" text = "PopupDialogs"/>
+    <g:Button ui:field="eventy" text = "guzikEventowyJakSieKliknieEventSie'Spali'" />
     </g:HTMLPanel>
    
 </ui:UiBinder>
